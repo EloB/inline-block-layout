@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Layout system</title>
+	<!-- You dont need Twitter bootstrap but I added to  get a cleaner look on the demo -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="layout.css">
+
+	<style type="text/css">
+		/* Demo specific styles */
+		html, body {
+			height: 100%;
+		}
+
+		html {
+			overflow-y: scroll;
+		}
+
+		.content {
+			transition: all 2s;
+			-webkit-transition: all 2s;
+		}
+
+		.fake-height-content .content {
+			min-height: 200%;
+			*height: 200%;
+		}
+	</style>
+</head>
+<body><div class="inline-block-layout"></div
+	><div class="header">
+		<div class="container">
+			<h1>Header <small>Must have fixed height</small></h1>
+		</div>
+	</div
+	><div class="content">
+		<div class="container">
+			<h2>Content <small>Must set margin-top to header height and margin-bottom to footer height</small></h2>
+			<dl>
+				<dt>Middle/Bottom</dt>
+				<dd>If you add "content-middle"/"content-bottom" class to the wrapper in this case body the content will get that vertical alignment.</dd>
+				<dt>Top</dt>
+				<dd>If you dont have any class on the wrapper it will vertical aligned to top.</dd>
+				<dt>More content</dt>
+				<dd>Fake bigger size on content to see that it pushes the sticky footer!</dd>
+			</dl>
+			<a href="#" class="btn" onclick="document.body.className=''">Top</a>
+			<a href="#" class="btn" onclick="document.body.className='content-middle'">Middle</a>
+			<a href="#" class="btn" onclick="document.body.className='content-bottom'">Bottom</a>
+			<a href="#" class="btn btn-primary" onclick="document.documentElement.className=(document.documentElement.className == 'fake-height-content' ? '' : 'fake-height-content')">More content</a>
+		</div>
+	</div
+	><div class="footer">
+		<div class="container">
+			<h3>Footer <small>Must have fixed height</small></h3>
+		</div>
+	</div>
+</body>
+</html>

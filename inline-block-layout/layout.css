@@ -1,0 +1,51 @@
+/* Inline block layout */
+.inline-block-layout {
+	display: inline-block;
+	content: '';
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.header,
+.content,
+.footer {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 100%;
+}
+
+.content,
+.footer {
+	margin-left: -100%;
+}
+
+.content-middle > .content {
+	vertical-align: middle;
+}
+
+.content-bottom > .content {
+	vertical-align: bottom;
+}
+
+/* Customs */
+.header {
+	vertical-align: top;
+	background: #ccc;
+	height: 100px;
+}
+
+.content {
+	vertical-align: top;
+	background: #ddd;
+	margin-top: 100px; /* Same as #header */
+	margin-bottom: 60px; /* Same as #footer */
+}
+
+.footer {
+	vertical-align: bottom;
+	background: #eee;
+	height: 60px;
+}
