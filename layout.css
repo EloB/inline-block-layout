@@ -1,22 +1,5 @@
-/* Fixes */
-html, body {
-	height: 100%;
-}
-
-body {
-	*zoom: expression(this.runtimeStyle.zoom='normal', this.insertBefore(document.createElement('before'), this.firstChild));
-}
-
-body>before {
-	display: inline;
-	zoom: 1;
-	width: 0;
-	height: 100%;
-	overflow: hidden;
-	vertical-align: middle;
-}
-
-body:before {
+/* Inline block layout */
+.inline-block-layout {
 	display: inline-block;
 	content: '';
 	width: 0;
@@ -25,29 +8,44 @@ body:before {
 	vertical-align: middle;
 }
 
-#header,
-#content,
-#footer {
+.header,
+.content,
+.footer {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
 	width: 100%;
 }
 
-#content,
-#footer {
+.content,
+.footer {
 	margin-left: -100%;
 }
 
-/* Customs */
-#header {
-	vertical-align: top;
-}
-
-#content {
+.content-middle > .content {
 	vertical-align: middle;
 }
 
-#footer {
+.content-bottom > .content {
 	vertical-align: bottom;
+}
+
+/* Customs */
+.header {
+	vertical-align: top;
+	background: #ccc;
+	height: 100px;
+}
+
+.content {
+	vertical-align: top;
+	background: #ddd;
+	margin-top: 100px; /* Same as #header */
+	margin-bottom: 60px; /* Same as #footer */
+}
+
+.footer {
+	vertical-align: bottom;
+	background: #eee;
+	height: 60px;
 }
