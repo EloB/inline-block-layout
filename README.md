@@ -1,7 +1,7 @@
 Inline block layout
 =======
 
-A CSS layout system.
+The ultimate CSS layout system with vertical alignment.
 
 Demo
 ------
