@@ -1,0 +1,53 @@
+/* Fixes */
+html, body {
+	height: 100%;
+}
+
+body {
+	*zoom: expression(this.runtimeStyle.zoom='normal', this.insertBefore(document.createElement('before'), this.firstChild));
+}
+
+body>before {
+	display: inline;
+	zoom: 1;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+body:before {
+	display: inline-block;
+	content: '';
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+#header,
+#content,
+#footer {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 100%;
+}
+
+#content,
+#footer {
+	margin-left: -100%;
+}
+
+/* Customs */
+#header {
+	vertical-align: top;
+}
+
+#content {
+	vertical-align: middle;
+}
+
+#footer {
+	vertical-align: bottom;
+}
