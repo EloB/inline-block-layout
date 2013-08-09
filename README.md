@@ -3,6 +3,10 @@ Inline block layout
 
 A CSS layout system.
 
+Demo
+------
+http://elob.github.io/inline-block-layout
+
 Social
 ------
 
