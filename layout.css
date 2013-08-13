@@ -1,51 +1,56 @@
-/* Inline block layout */
-.inline-block-layout {
-	display: inline-block;
-	content: '';
-	width: 0;
-	height: 100%;
-	overflow: hidden;
-	vertical-align: middle;
+.ib-layout {
+  *zoom: expression(this.runtimeStyle.zoom='normal',this.insertBefore(document.createElement('before'),this.firstChild));
 }
-
-.header,
-.content,
-.footer {
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-	width: 100%;
+.ib-layout > before {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
 }
-
-.content,
-.footer {
-	margin-left: -100%;
+.ib-layout:before {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+  content: '';
 }
-
-.content-middle > .content {
-	vertical-align: middle;
+.ib-before {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
 }
-
-.content-bottom > .content {
-	vertical-align: bottom;
+.ib-header,
+.ib-content,
+.ib-footer {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 100%;
+  margin-left: -100%;
 }
-
-/* Customs */
-.header {
-	vertical-align: top;
-	background: #ccc;
-	height: 100px;
+.ib-header {
+  margin-left: 0;
 }
-
-.content {
-	vertical-align: top;
-	background: #ddd;
-	margin-top: 100px; /* Same as #header */
-	margin-bottom: 60px; /* Same as #footer */
+.ib-header,
+.ib-content {
+  vertical-align: top;
 }
-
-.footer {
-	vertical-align: bottom;
-	background: #eee;
-	height: 60px;
+.ib-footer {
+  vertical-align: bottom;
+}
+.ib-middle > .ib-content {
+  vertical-align: middle;
+}
+.ib-bottom > .ib-content {
+  vertical-align: bottom;
 }
