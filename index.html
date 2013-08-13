@@ -19,24 +19,40 @@
 			overflow-y: scroll;
 		}
 
-		.content {
+		.ib-content {
 			transition: all 2s;
 			-webkit-transition: all 2s;
 		}
 
-		.fake-height-content .content {
+		.fake-height-content .ib-content {
 			min-height: 200%;
 			*height: 200%;
 		}
+
+		.ib-header {
+			background: #ccc;
+			height: 100px;
+		}
+
+		.ib-content {
+			background: #ddd;
+			margin-top: 100px; /* Same as #header */
+			margin-bottom: 60px; /* Same as #footer */
+		}
+
+		.ib-footer {
+			background: #eee;
+			height: 60px;
+		}
 	</style>
 </head>
-<body><div class="inline-block-layout"></div
-	><div class="header">
+<body class="ib-layout"
+	><div class="ib-header">
 		<div class="container">
 			<h1>Header <small>Must have fixed height</small></h1>
 		</div>
 	</div
-	><div class="content">
+	><div class="ib-content">
 		<div class="container">
 			<h2>Content <small>Must set margin-top to header height and margin-bottom to footer height</small></h2>
 			<dl>
@@ -47,13 +63,13 @@
 				<dt>More content</dt>
 				<dd>Fake bigger size on content to see that it pushes the sticky footer!</dd>
 			</dl>
-			<a href="#" class="btn" onclick="document.body.className=''">Top</a>
-			<a href="#" class="btn" onclick="document.body.className='content-middle'">Middle</a>
-			<a href="#" class="btn" onclick="document.body.className='content-bottom'">Bottom</a>
+			<a href="#" class="btn" onclick="document.body.className='ib-layout'">Top</a>
+			<a href="#" class="btn" onclick="document.body.className='ib-layout ib-middle'">Middle</a>
+			<a href="#" class="btn" onclick="document.body.className='ib-layout ib-bottom'">Bottom</a>
 			<a href="#" class="btn btn-primary" onclick="document.documentElement.className=(document.documentElement.className == 'fake-height-content' ? '' : 'fake-height-content')">More content</a>
 		</div>
 	</div
-	><div class="footer">
+	><div class="ib-footer">
 		<div class="container">
 			<h3>Footer <small>Must have fixed height</small></h3>
 		</div>
