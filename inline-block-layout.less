@@ -1,0 +1,64 @@
+.ib {
+	.inline-block() {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+	}
+
+	.before() {
+		.inline-block;
+		width: 0;
+		height: 100%;
+		overflow: hidden;
+		vertical-align: middle;
+	}
+
+	&-layout {
+		*zoom: ~"expression(this.runtimeStyle.zoom='normal',this.insertBefore(document.createElement('before'),this.firstChild))";
+
+		&>before {
+			.before;
+		}
+
+		&:before {
+			.before;
+			content: '';
+		}
+	}
+
+	&-before {
+		.before;
+	}
+
+	&-header,
+	&-content,
+	&-footer {
+		.inline-block;
+
+		width: 100%;
+		margin-left: -100%;
+	}
+
+	&-header {
+		margin-left: 0;
+	}
+
+	&-header,
+	&-content {
+		vertical-align: top;
+	}
+
+	&-footer {
+		vertical-align: bottom;
+	}
+
+	&-content {
+		.ib-middle > & {
+			vertical-align: middle;
+		}
+
+		.ib-bottom > & {
+			vertical-align: bottom;
+		}
+	}
+}

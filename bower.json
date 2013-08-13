@@ -1,7 +1,7 @@
 {
   "name": "inline-block-layout",
   "version": "0.0.0",
-  "main": "layout.css",
+  "main": "inline-block-layout.css",
   "ignore": [
     "**/.*",
     "node_modules",
